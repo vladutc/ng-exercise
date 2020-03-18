@@ -9,11 +9,9 @@ import { Task } from '../core/tasks/tasks';
 })
 export class LandingComponent implements OnInit {
   exerciseTasks: Array<Task>;
-  constructor(private appService: AppService) {
-  }
+  constructor(private appService: AppService) {}
 
   ngOnInit() {
     this.exerciseTasks = this.appService.getTasks();
   }
-
 }

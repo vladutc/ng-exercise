@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
+import { AppService } from '../core/services/app.service';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -8,9 +9,9 @@ describe('LandingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingComponent ]
-    })
-    .compileComponents();
+      declarations: [LandingComponent],
+      providers: [AppService]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

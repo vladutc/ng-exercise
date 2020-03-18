@@ -12,26 +12,17 @@ export class AppContentComponent implements OnInit {
     lastName: 'Ayaz'
   };
   isLoggedIn: boolean;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.isLoggedIn = false;
   }
 
-  /**
-   * @author Ahsan Ayaz
-   * @desc Logs the user in
-   */
   login() {
     this.isLoggedIn = true;
   }
 
-  /**
-   * @author Ahsan Ayaz
-   * @desc Logs the user out
-   */
   logout() {
     this.isLoggedIn = false;
   }
-
 }
