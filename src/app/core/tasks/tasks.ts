@@ -7,33 +7,32 @@ export interface Task {
 const tasks: Array<Task> = [
   {
     description: `
-    Create a lazy loaded page for Users list. Name it \'users-list\' component while creating.\n
-    Use {{link}} to get the 20 users and display them in a list on the page.
-    The properties to be shown in the list items should be:
-    First Name, Last Name, Email, Phone
+    Create a lazy loaded page that lists users via a component named: 'users-list'.
+    Use {{link}} to get 12 users and display them in a list on that page.
+    The properties to be shown for each user should include:
+    First Name and Last Name
     `,
-    links: ['https://randomuser.me/']
+    links: ["https://reqres.in/"]
   },
   {
     description: `
-    When the user list is created, upon clicking of any user item, the app should navigate to
-    the user detail page (name it 'user-detail' component). This user details page would be dynamic.
-    I.e. the url should contain the user id while navigating to the user detail page.
-    There should be a back button on the user detail page so the end-user can go back to the user listing page.
-    The properties to show on the user details are:
-    Picture, First Name, Last Name, Email, Phone
+    On click of any of the users, the app should navigate to the user detail page via a component named: 'user-detail'.
+    The url should contain the user id.
+    There should be a back button on the user detail page so one can go back to the user list page.
+    The properties to be shown should include:
+    Avatar, First Name, Last Name and Email
   `,
-    routerLinks: ['home']
+    routerLinks: ["home"]
   },
   {
     description: `
-    The HOME page currently has two components, 'app-header' and 'app-content'.
-    User can login from each of the two components but the state in these components are not synced.
-    I.e. if the user logs in/logs out from the app-header, the app-content doesn't get notified.
-    Go to {{link}} and implement the logic to notify the \'app-header'\n component
-    and the \'app-content\' component when the user logs in and logs out of the app from either of the two components.
+    The HOME page currently has two components: 'app-header' and 'app-content'.
+    The end user can log in from each of the two components, but the state in these components are not synced.
+    I.e. if the user logs in/out from the app-header, the app-content doesn't get notified.
+    Go to {{link}} and implement the logic to notify the 'app-header' component
+    and the 'app-content' component when the user logs in and logs out of the app from either of the two components.
   `,
-    routerLinks: ['home']
+    routerLinks: ["home"]
   }
 ];
 

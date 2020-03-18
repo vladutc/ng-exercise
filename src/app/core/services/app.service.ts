@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import tasks, { Task } from '../tasks/tasks';
+import { Injectable } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import tasks, { Task } from "../tasks/tasks";
 
 @Injectable()
 export class AppService {
@@ -8,19 +8,19 @@ export class AppService {
 
   getTasks(): Array<Task> {
     return tasks.map(task => {
-      const updatedTask: Task = { description: '' };
+      const updatedTask: Task = { description: "" };
       if (task.links && task.links.length) {
         for (const link of task.links) {
           updatedTask.description = task.description.replace(
-            '{{link}}',
+            "{{link}}",
             `<a href='${link}'>${link}</a>`
           );
         }
       } else if (task.routerLinks && task.routerLinks.length) {
         for (const link of task.routerLinks) {
           updatedTask.description = task.description.replace(
-            '{{link}}',
-            `<a href='/${link}' routerLink="${link}">'${link} route'</a>`
+            "{{link}}",
+            `<a href='/${link}' routerLink="${link}">${link} route</a>`
           );
         }
       }
