@@ -17,7 +17,6 @@ export class UserDetailComponent implements OnInit {
 
   setUser(): void {
     const userId = this.router.url.split('/')[2];
-    console.log(userId)
     this.usersService
       .getUserById(userId)
       .subscribe(({data}) => (this.user = data));

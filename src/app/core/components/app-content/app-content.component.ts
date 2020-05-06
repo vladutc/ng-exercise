@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../../models/user.model';
 
 @Component({
@@ -7,22 +7,22 @@ import { User } from '../../models/user.model';
   styleUrls: ['./app-content.component.scss']
 })
 export class AppContentComponent implements OnInit {
+  @Input() isLoggedIn: boolean;
+  @Output() logInChange: EventEmitter<boolean> = new EventEmitter(false);
   user: User = {
     firstName: 'Ahsan',
     lastName: 'Ayaz'
   };
-  isLoggedIn: boolean;
   constructor() {}
 
   ngOnInit() {
-    this.isLoggedIn = false;
   }
 
   login() {
-    this.isLoggedIn = true;
+    this.logInChange.emit(true);
   }
 
   logout() {
-    this.isLoggedIn = false;
+    this.logInChange.emit(false);
   }
 }

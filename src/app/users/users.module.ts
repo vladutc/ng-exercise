@@ -5,6 +5,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -12,6 +13,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
   declarations: [UsersListComponent, UserDetailComponent],
   imports: [
     CommonModule,
+    CoreModule,
     HttpClientModule,
     UsersRoutingModule
   ],

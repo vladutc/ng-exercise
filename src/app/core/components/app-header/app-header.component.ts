@@ -1,32 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user.model';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { User } from "../../models/user.model";
 
 @Component({
-  selector: 'ng-e-app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.scss']
+  selector: "ng-e-app-header",
+  templateUrl: "./app-header.component.html",
+  styleUrls: ["./app-header.component.scss"],
 })
 export class AppHeaderComponent implements OnInit {
+  @Input() isLoggedIn: boolean;
+  @Output() logInChange: EventEmitter<boolean> = new EventEmitter(false);
   user: User = {
-    firstName: 'Ahsan',
-    lastName: 'Ayaz'
+    firstName: "Ahsan",
+    lastName: "Ayaz",
   };
-  isLoggedIn: boolean;
   constructor() {}
 
-  ngOnInit() {
-    this.isLoggedIn = false;
-  }
+  ngOnInit() {}
 
   login() {
-    this.isLoggedIn = true;
+    this.logInChange.emit(true);
   }
 
   signup() {
-    this.isLoggedIn = true;
+    this.logInChange.emit(true);
   }
 
   logout() {
-    this.isLoggedIn = false;
+    this.logInChange.emit(false);
   }
 }

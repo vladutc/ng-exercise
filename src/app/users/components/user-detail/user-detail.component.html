@@ -1,6 +1,7 @@
+<ng-e-app-header></ng-e-app-header>
 <div class="user-detail-container">
   <h1>User detail</h1>
-  <div class="user-info">
+  <div class="user-info" *ngIf="user">
     <img src="{{user.avatar}}" />
     <ul>
       <li><b>First name:</b> {{user.first_name}}</li>
